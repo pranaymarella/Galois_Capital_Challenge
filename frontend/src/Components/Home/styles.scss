@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous|Roboto|Roboto+Condensed');
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0px 50px;
+
+  .loader {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .Chart {
+    width: 100%;
+  }
+
+  .Graphs {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    margin: 25px auto 25px auto;
+    width: 800px;
+  }
+
+  @media only screen and (max-width: 900px) {
+    .Graphs {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 550px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .Graphs {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 300px;
+    }
+  }
+
+  .Search {
+
+    .dropdown {
+      width: 750px;
+      margin: 25px 0px 25px 0px;
+    }
+
+    .text {
+      font-size: 25px;
+    }
+
+    .box {
+      border: 1px solid white;
+      width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 25px;
+      background-color: white;
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.03);
+      border-radius: 4px;
+    }
+
+    h3 {
+      font-family: 'Roboto';
+      font-size: 20px;
+    }
+
+    .legendItems {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      font-family: 'Roboto';
+
+      .item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .legendBox {
+        width: 15px;
+        height: 15px;
+        margin: 10px;
+        border: 1px solid transparent;
+        border-radius: 2px;
+      }
+      .binance {
+        background-color: #d70206;
+      }
+      .kraken {
+        background-color: #f4c63d;
+      }
+      .bittrex {
+        background-color: #f05b4f;
+      }
+      .kucoin {
+        background-color: #d17905;
+      }
+    }
+
+    @media only screen and (max-width: 900px) {
+      .dropdown {
+        width: 450px;
+        margin: 25px auto 25px auto;
+      }
+
+      .box {
+        border: 1px solid white;
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 25px;
+        background-color: white;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .dropdown {
+        width: 200px;
+        margin: 25px auto 25px auto;
+      }
+
+      .box {
+        border: 1px solid white;
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 25px;
+        background-color: white;
+      }
+    }
+  }
+}
