@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Righteous|Roboto|Roboto+Condensed");
+.Home {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0px 50px; }
+  .Home .loader {
+    margin-left: auto;
+    margin-right: auto; }
+  .Home .Chart {
+    width: 100%; }
+  .Home .Graphs {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    margin: 25px auto 25px auto;
+    width: 800px; }
+  @media only screen and (max-width: 900px) {
+    .Home .Graphs {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 550px; } }
+  @media only screen and (max-width: 600px) {
+    .Home .Graphs {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 300px; } }
+  .Home .Search .dropdown {
+    width: 750px;
+    margin: 25px 0px 25px 0px; }
+  .Home .Search .text {
+    font-size: 25px; }
+  .Home .Search .box {
+    border: 1px solid white;
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+    background-color: white;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.03);
+    border-radius: 4px; }
+  .Home .Search h3 {
+    font-family: 'Roboto';
+    font-size: 20px; }
+  .Home .Search .legendItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: 'Roboto'; }
+    .Home .Search .legendItems .item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      letter-spacing: 1px;
+      text-transform: uppercase; }
+    .Home .Search .legendItems .legendBox {
+      width: 15px;
+      height: 15px;
+      margin: 10px;
+      border: 1px solid transparent;
+      border-radius: 2px; }
+    .Home .Search .legendItems .binance {
+      background-color: #d70206; }
+    .Home .Search .legendItems .kraken {
+      background-color: #f4c63d; }
+    .Home .Search .legendItems .bittrex {
+      background-color: #f05b4f; }
+    .Home .Search .legendItems .kucoin {
+      background-color: #d17905; }
+  @media only screen and (max-width: 900px) {
+    .Home .Search .dropdown {
+      width: 450px;
+      margin: 25px auto 25px auto; }
+    .Home .Search .box {
+      border: 1px solid white;
+      width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 25px;
+      background-color: white; } }
+  @media only screen and (max-width: 600px) {
+    .Home .Search .dropdown {
+      width: 200px;
+      margin: 25px auto 25px auto; }
+    .Home .Search .box {
+      border: 1px solid white;
+      width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 25px;
+      background-color: white; } }

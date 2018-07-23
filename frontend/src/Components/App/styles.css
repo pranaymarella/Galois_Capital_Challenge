@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Righteous|Roboto|Roboto+Condensed");
+.App {
+  font-family: 'Roboto'; }
+  .App .header {
+    width: 100%;
+    text-align: center;
+    font-family: 'Righteous';
+    font-size: 40px; }
