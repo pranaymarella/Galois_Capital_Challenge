@@ -4,19 +4,19 @@ var rp = require('request-promise');
 const app = express();
 const port = process.env.PORT || 5000;
 
-const base_url = 'https://admin.galois.capital';
+const base_url = '<SERVER URL>'; // REPLACE WITH SERVER URL
 var access_token = '';
 
 rp({
   method: 'POST',
   uri: base_url + '/mfa/oauth2/token/',
   form: {
-    grant_type: 'password',
-    username: 'candidate1',
-    password: 'VWs99M3mgXtPMRQe',
-    scope: 'read write groups',
-    client_id: 'A5PPXeV8GyYDnjlvMvgnyl1c6HxSetADpgNX2zFj',
-    client_secret: 'OUa0kftm8rvi6YfGrHfnnkXBUaQUugUZhtH5qfhATpztgu3Vqz48OLpOBc81wwsWQmSu2j1OuxczaI4BouMsI7YZjgTdLMjgoIEoSrZpNEc98DkgTwmXwWp7VXhMiWfz'
+    grant_type: 'password', // GRANT TYPE
+    username: '<USERNAME>', // USERNAME
+    password: '<PASSWORD>', // PASSWORD
+    scope: 'read write groups', // SCOPE
+    client_id: '<CLIENT ID>', // CLIENT ID
+    client_secret: '<CLIENT SECRET>' // CLIENT SECRET
   },
 }).then(function (parsedBody) {
   const result = JSON.parse(parsedBody);
