@@ -4,13 +4,28 @@ var rp = require('request-promise');
 const app = express();
 const port = process.env.PORT || 5000;
 
-const base_url = '<INSERT SERVER URL HERE>'; // ex. https://example.company.capital
-const access_token = '<INSERT ACCESS TOKEN HERE>';
+const base_url = 'https://admin.galois.capital';
+var access_token = '';
 
-app.get('/api/hello', (req, res) => {
-  res.send({ express: 'Hello From Express' });
+rp({
+  method: 'POST',
+  uri: base_url + '/mfa/oauth2/token/',
+  form: {
+    grant_type: 'password',
+    username: 'candidate1',
+    password: 'VWs99M3mgXtPMRQe',
+    scope: 'read write groups',
+    client_id: 'A5PPXeV8GyYDnjlvMvgnyl1c6HxSetADpgNX2zFj',
+    client_secret: 'OUa0kftm8rvi6YfGrHfnnkXBUaQUugUZhtH5qfhATpztgu3Vqz48OLpOBc81wwsWQmSu2j1OuxczaI4BouMsI7YZjgTdLMjgoIEoSrZpNEc98DkgTwmXwWp7VXhMiWfz'
+  },
+}).then(function (parsedBody) {
+  const result = JSON.parse(parsedBody);
+  access_token = result.access_token;
+}).catch(function (err) {
+  console.log('ERROR: ACCESS TOKEN NOT FOUND');
 });
 
+// Fetches the Currency Pairs. ex. BTC/USD
 app.get('/api/symbols', (req, res) => {
   let options = {
     method: 'POST',
@@ -31,6 +46,7 @@ app.get('/api/symbols', (req, res) => {
   });
 });
 
+// Fetches the Order Book of the Given Currency Pair
 app.get('/api/:currency_pair', (req, res) => {
   const pair = req.params.currency_pair.replace('_', '/');
   let options = {

@@ -8,7 +8,8 @@ class Container extends Component {
     bids: [],
     asks: [],
     selectedCrypto: { label: 'BTC/USD', value: 'BTC_USD'},
-    exchangeOptions: ["krakenEA", "binanceEA", "bittrexEA", "kucoinEA"]
+    exchangeOptions: ["krakenEA", "binanceEA", "bittrexEA", "kucoinEA"],
+    selectedExchange: ["krakenEA", "binanceEA", "bittrexEA", "kucoinEA"]
   };
 
   componentDidMount() {
@@ -58,6 +59,10 @@ class Container extends Component {
     this.setState({ dropdown: res });
   }
 
+  updateExchanges = selectedValues => {
+    this.setState({ selectedExchange: selectedValues.map(x => x.value) });
+  }
+
   updateValue = selectedValue => {
     this.setState({ selectedCrypto: selectedValue });
     this.props.getOrderBook(selectedValue.value);
@@ -65,7 +70,10 @@ class Container extends Component {
 
   render() {
     return (
-      <Home {...this.props} {...this.state} updateValue={this.updateValue}/>
+      <Home {...this.props} {...this.state}
+        updateValue={this.updateValue}
+        updateExchanges={this.updateExchanges}
+      />
     );
   }
 }

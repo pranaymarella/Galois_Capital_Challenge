@@ -28,8 +28,9 @@ const Home = props => {
 const Graphs = props => {
   return (
     <div className="Graphs">
-    { props.bids && props.bids.length !== 0 ? <BidChart data={props.bids} /> : <Empty />}
-    { props.asks && props.asks.length !== 0 ? <AskChart data={props.asks} /> : ''}
+    {console.log(props)}
+    { props.bids && props.bids.length !== 0 ? <BidChart data={props.bids} exchanges={props.selectedExchange} /> : <Empty />}
+    { props.asks && props.asks.length !== 0 ? <AskChart data={props.asks} exchanges={props.selectedExchange} /> : ''}
     </div>
   );
 }
@@ -94,10 +95,11 @@ const Search = props => {
         <div className="dropdown">
           <h3>Exchanges</h3>
           <Select
-            defaultValue={Exchanges[0]}
+            defaultValue={Exchanges}
             isMulti
             name="colors"
             options={Exchanges}
+            onChange={props.updateExchanges}
             className="basic-multi-select text"
             classNamePrefix="select"
           />
@@ -116,10 +118,11 @@ const BidChart = props => {
   let kraken = [];
   let kucoin = [];
 
-  binance = props.data.binance ? props.data.binance.map(b => b[1]) : [0];
-  bittrex = props.data.bittrex ? props.data.bittrex.map(b => b[1]) : [0];
-  kraken = props.data.kraken ? props.data.kraken.map(b => b[1]) : [0];
-  kucoin = props.data.kucoin ? props.data.kucoin.map(b => b[1]) : [0];
+  binance = props.data.binance && props.exchanges.includes("binanceEA") ? props.data.binance.map(b => b[1]) : [0];
+  bittrex = props.data.bittrex && props.exchanges.includes("bittrexEA") ? props.data.bittrex.map(b => b[1]) : [0];
+  kraken = props.data.kraken && props.exchanges.includes("krakenEA") ? props.data.kraken.map(b => b[1]) : [0];
+  kucoin = props.data.kucoin && props.exchanges.includes("kucoinEA") ? props.data.kucoin.map(b => b[1]) : [0];
+
   var data = {
     labels: prices.reverse(),
     series: [
@@ -171,10 +174,10 @@ const AskChart = props => {
   let kraken = [];
   let kucoin = [];
 
-  binance = props.data.binance ? props.data.binance.map(b => b[1]) : [0];
-  bittrex = props.data.bittrex ? props.data.bittrex.map(b => b[1]) : [0];
-  kraken = props.data.kraken ? props.data.kraken.map(b => b[1]) : [0];
-  kucoin = props.data.kucoin ? props.data.kucoin.map(b => b[1]) : [0];
+  binance = props.data.binance && props.exchanges.includes("binanceEA") ? props.data.binance.map(b => b[1]) : [0];
+  bittrex = props.data.bittrex && props.exchanges.includes("bittrexEA") ? props.data.bittrex.map(b => b[1]) : [0];
+  kraken = props.data.kraken && props.exchanges.includes("krakenEA") ? props.data.kraken.map(b => b[1]) : [0];
+  kucoin = props.data.kucoin && props.exchanges.includes("kucoinEA") ? props.data.kucoin.map(b => b[1]) : [0];
 
   var data = {
     labels: prices,

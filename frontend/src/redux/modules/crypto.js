@@ -35,7 +35,6 @@ function getCryptoList() {
   return async (dispatch, getState) => {
     const crypto_list = await getAPI('/api/symbols');
 
-    // console.log(crypto_list);
     if (crypto_list) {
       dispatch(setCryptoList(crypto_list));
     }
@@ -46,7 +45,6 @@ function getOrderBook(symbol) {
   return async (dispatch, getState) => {
     const order_book = await getAPI('/api/' + symbol);
 
-    console.log(order_book, symbol);
     if (order_book) {
       dispatch(setOrderBook(order_book));
     }
