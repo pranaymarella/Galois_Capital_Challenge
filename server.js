@@ -5,6 +5,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const base_url = 'https://admin.galois.capital';
+const access_token = '<INSERT ACCESS TOKEN HERE>';
 
 app.get('/api/hello', (req, res) => {
   res.send({ express: 'Hello From Express' });
@@ -18,7 +19,7 @@ app.get('/api/symbols', (req, res) => {
       action: 'fetch_symbols'
     },
     headers: {
-      'Authorization': 'Bearer p5jQ7ORqiihmX5MoEuoi2fvUsyg0yD'
+      'Authorization': 'Bearer ' + access_token
     }
   };
 
@@ -41,7 +42,7 @@ app.get('/api/:currency_pair', (req, res) => {
       exchange_list: ['krakenEA', 'binanceEA', 'bittrexEA', 'kucoinEA']
     },
     headers: {
-      'Authorization': 'Bearer p5jQ7ORqiihmX5MoEuoi2fvUsyg0yD'
+      'Authorization': 'Bearer ' + access_token
     }
   };
 

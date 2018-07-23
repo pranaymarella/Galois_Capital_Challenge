@@ -13,9 +13,11 @@
     "react-chartist": "^0.13.1",
     "react-loading": "^2.0.3",
     "request": "^2.87.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "simple-oauth2": "^2.2.0"
   },
   "devDependencies": {
-    "concurrently": "^3.5.0"
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.18.3"
   }
 }
