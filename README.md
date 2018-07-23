@@ -8,7 +8,8 @@
 * `cd frontend/` - enter the frontend directory
 * run `npm install` again within the frontend directory
 * `cd ..` to go back to the root of the repository
-* run `curl -X POST "grant_type=password&username=<username>&password=<password> -u "<client_token>" <url>/mfa/oauth2/token/` to get an access token
+* on line 7 of `server.js`, replace `INSERT SERVER URL HERE` with the given server url
+* run the command to get Oauth2 Access Token
 * copy the access token and go to server.js
 * on line 8, replace `<INSERT ACCESS TOKEN HERE>` with the access token you received
 * simply run `yarn dev` and now go to `localhost:3000`!

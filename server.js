@@ -4,7 +4,7 @@ var rp = require('request-promise');
 const app = express();
 const port = process.env.PORT || 5000;
 
-const base_url = 'https://admin.galois.capital';
+const base_url = '<INSERT SERVER URL HERE>'; // ex. https://example.company.capital
 const access_token = '<INSERT ACCESS TOKEN HERE>';
 
 app.get('/api/hello', (req, res) => {
